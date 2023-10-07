@@ -1,0 +1,120 @@
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+	"userreg": "StrokovnjakMiha",
+	"imereg" : "Miha",
+	"priireg" : "Zver",
+	"emailreg": "mzver@strokovnjak.si",
+	"gesloreg" : "mihazverjekul"
+}
+###
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+	"userreg": "RandomUser",
+	"imereg" : "Random",
+	"priireg" : "User",
+	"emailreg": "random@users.si",
+	"gesloreg" : "randomuser"
+}
+###
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+	"userreg": "johny",
+	"imereg" : "John",
+	"priireg" : "Doe",
+	"emailreg": "johndoe@example.com",
+	"gesloreg" : "johnnyiscool"
+}
+###
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+	"userreg": "Bruh",
+	"imereg" : "Bruh",
+	"priireg" : "Zlo",
+	"emailreg": "bruh@users.com",
+	"gesloreg" : "bruh4life"
+}
+###
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+	"userreg": "StrokovnjakAnja",
+	"imereg" : "Anja",
+	"priireg" : "Mez",
+	"emailreg": "amez@strokovnjak.si",
+	"gesloreg" : "jazsemanja"
+}
+###
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+	"userreg": "StrokovnjakLovro",
+	"imereg" : "Lovro",
+	"priireg" : "Kalin",
+	"emailreg": "lkalin@strokovnjak.si",
+	"gesloreg" : "lkalinjegeslo"
+}
+###
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+	"userreg": "DummyData",
+	"imereg" : "Dummy",
+	"priireg" : "Data",
+	"emailreg": "dummy@DummyData.biz",
+	"gesloreg" : "dummyData@Diz.biz"
+}
+###
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+	"userreg": "InstaModel",
+	"imereg" : "Bela",
+	"priireg" : "Dvajsetletnica",
+	"emailreg": "expert@karen.biz",
+	"gesloreg" : "imofedned"
+}
+###
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+	"userreg": "BeastModeOn",
+	"imereg" : "Klemen",
+	"priireg" : "Oper",
+	"emailreg": "koper@gmail.com",
+	"gesloreg" : "imemijeklemen"
+}
+###
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+	"userreg": "StrokovnjakMia",
+	"imereg" : "Miha",
+	"priireg" : "Klez",
+	"emailreg": "mklez@strokovnjak.si",
+	"gesloreg" : "S3cur3P4ssw0rd!314"
+}
+###
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+	"userreg": "AdrenalineAddict",
+	"imereg" : "Sergej",
+	"priireg" : "Mejnik",
+	"emailreg": "serger.mejnik@nor.si",
+	"gesloreg" : "izbloganorsibyadmin"
+}

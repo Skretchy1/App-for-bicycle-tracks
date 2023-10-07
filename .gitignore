@@ -1,0 +1,7 @@
+/node_modules/
+/mock.db
+/package.json
+/package-lock.json
+/.env
+/public/request.rest
+/request.rest

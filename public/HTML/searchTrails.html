@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../CSS/style.css" rel="stylesheet" />
+    <title>Kolesar.si</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/78c2386421.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+    crossorigin=""></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+</head>
+<body class="aboutusbody">
+  <header>
+    <div class="logo">
+        <a class="navbar-brand" href="/"><img src="../pictures/pickedlogo.png" style="width:100px;height:100px;" alt=""></a>
+    </div>
+<div class="nav-modal">
+<div class="blob"></div>
+<nav>
+  <ul>
+    <li><a href="/">HOME</a>
+    </li>
+    <li><a href="about">ABOUT</a>
+      <ul>
+        <!-- <li><a href="about">US</a></li>
+        <li><a href="#">CONTANCTS</a></li> -->
+      </ul>
+    </li>
+    <li><a href="svetovalnica">FORUM</a></li>
+    <li><a href="questions">QUESTIONS</a>
+    <li><a href="searchtrails">SEARCH TRAILS</a>
+    <li><a href="createTrails">CREATE TRAILS</a>
+      <!-- <ul>
+        <li><a href="#">STUFF</a></li>
+        <li><a href="#">STUFF</a></li>
+        <li><a href="#">STUFF</a></li>
+      </ul> -->
+    </li>
+    <li><a href="login">LOGIN</a></li>
+    <li><a href="register">REGISTER</a></li>
+  </ul>
+</nav>
+</div>
+<div class="head">
+<div class="tile burger">
+  <div class="meat">
+    <div class="line one"></div>
+    <div class="line two"></div>
+    <div class="line three"></div>
+  </div>
+</div>
+</div>
+</header>
+    
+    <section class=" potipart">
+        <div class="row filter">
+            <!-- <div class="col-lg-12"> -->
+              <form class="row text-center stylingfilter">
+                  <div class="form-group col-lg-2">
+                    <label for="dolzina">Max length:</label>
+                    <input type="text" class="form-control" id="dolzina" name="name"/>
+                  </div>
+                  
+                  <div class="form-group col-lg-2">
+                    <label for="tezava">Difficulty:</label>
+                    <input type="text" class="form-control" id="tezava" name="name"/>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="filteringtime">Duration:</label>
+                    <select class="form-control" id="filteringtime" name="filteringtime">
+                      <option value="one-hour">Less than an hour</option>
+                      <option value="six-hours">Less than six hours</option>
+                      <option value="twelve-hours">Less than twelve hours</option>
+                      <option value="lessthanaday">Less than a day</option>
+                      <option value="longerthanaday">More than a day</option>
+                      <option value="Drugo" selected>Other</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <p>Type:</p>
+                    <input type="checkbox" class="tipi" id="concrete" name="Concrete" value="picked-concrete">
+                    <label for="concrete"> Concrete</label>
+                    <input type="checkbox" class="tipi" id="dirt" name="Dirt" value="picked-dirt">
+                    <label for="dirt">Dirt</label>
+                    <input type="checkbox"  class="tipi"id="macadam" name="Macadam" value="picked-macadam">
+                    <label for="macadam">Macadam</label><br>
+                    <input type="checkbox" class="tipi" id="forested" name="Forested" value="picked-forested">
+                    <label for="forested">Forested</label>
+                    <input type="checkbox" class="tipi" id="gravel" name="Gravel" value="picked-gravel">
+                    <label for="gravel">Gravel</label>
+                    <input type="checkbox" class="tipi" id="other" name="Other" value="picked-other">
+                    <label for="other">Other</label>
+                  </div>
+                  <div class="form-group col-lg-1 stylingonfilterbutton">
+                    <button class="btn btn-primary" type="button" id="findPath" style="margin-top: 2%;">
+                        Find Path
+                    </button>
+                  </div>
+                  <div class="form-group col-lg-1 stylingonfilterbutton">
+                    <button class="btn btn-primary showfavourites" onclick="allFavs()" type="button" id="showFavourites" style="margin-top: 2%;">
+                        Show Favourites
+                    </button>
+                  </div>
+                </form>
+            <!-- </div> -->
+        </div>
+        <div class="stylingfilterbutton"><button id="buttonforfilter">Filter</button></div>
+        <div class="container-fluid pathsandmap">
+      <div class="row">
+        <div class=" col-lg-4 scrolldivstyling" style="padding-left: 230px;">
+            <div class="scroll">
+                <div id="pregledpoti">
+                    
+                </div> 
+            </div>   
+        </div>  
+        <div class="col-lg-6" style="padding-bottom: 10%;">
+            <div id="map" class="mapp" style="width: 700px; height: 800px;"></div>
+            <div class="showingopisspacing">
+                <div id="showingopis"></div>
+                <button class="btn btn-primary " type="button" id="favoriteButton" style="margin-top: 4%;">
+                   Add to Favorites
+                </button>
+            </div>
+        </div>
+        <div class=" col-lg-2">
+          <section id="hidden-section" class="hidden-section">
+            <h3 style="color: white" >Locations</h3>
+            <table id="hidden1" style="display : none">
+                <div id="hiddenp1" style="color: white">
+                </div>
+            </table>
+            <hr>
+            <h3 style="color: white">Rest stops</h3>
+            <table id="hidden2" style="display : none">
+                <div id="hiddenp2" style="color: white">
+                </div>
+            </table>
+        </section>  
+      </div>  
+      </div>
+      
+        </div>
+      
+        <div class="container">
+      <div class="row" class="comentsandocene">
+        <div class="col-lg-12">
+            
+              <section class="comments">
+                
+                
+                <div class="containerComments">
+          
+                  <h2 id="comNaslov"></h2> 
+    
+                  <div id="view">
+                    
+                  </div>
+                
+              
+            </div>
+        
+            <div class="classforocene">
+            <section id="rating">
+                <div class="star1">
+                  <div class="star2">
+                    <div class="star_rating">
+                      <p>Rate selected trail</p>
+                      <button class="star">&#9734;</button>
+                      <button class="star">&#9734;</button>
+                      <button class="star">&#9734;</button>
+                      <button class="star">&#9734;</button>
+                      <button class="star">&#9734;</button>
+                      <p class="current_rating">0 of 5</p>
+                      <p><textarea class="form-control" id="txtKomentar" placeholder="Add your comment" rows="2"></textarea></p>
+                      <button type="button" class="btn" id="btnforsendingocene" onclick="komentiraj()">Send</button>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+      
+            <!-- <section id="hidden-section" class="hidden-section">
+                <h3 style="color: white" >Locations</h3>
+                <table id="hidden1" style="display : none">
+                    <div id="hiddenp1" style="color: white">
+                    </div>
+                </table>
+                <hr>
+                <h3 style="color: white">Rest stops</h3>
+                <table id="hidden2" style="display : none">
+                    <div id="hiddenp2" style="color: white">
+                    </div>
+                </table>
+            </section> -->
+        </div>
+      </div>
+    </section>
+  
+
+
+    <div class="konec">
+      <footer class="text-center text-lg-start bg-light text-muted">
+          <!-- Section: Social media -->
+          <section
+            class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+              <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+        
+            <!-- Right -->
+            <div>
+              <a href="https://feri.um.si/" class="me-4 text-reset">
+                  <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="https://feri.um.si/" class="me-4 text-reset">
+                  <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a href="https://feri.um.si/" class="me-4 text-reset">
+                  <i class="fa-brands fa-google"></i>
+              </a>
+              <a href="https://feri.um.si/" class="me-4 text-reset">
+                  <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://feri.um.si/" class="me-4 text-reset">
+                  <i class="fa-brands fa-linkedin"></i>
+              </a>
+              <a href="https://feri.um.si/" class="me-4 text-reset">
+                  <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+            <!-- Right -->
+          </section>
+          <!-- Section: Social media -->
+        
+          <!-- Section: Links  -->
+          <section class="">
+            <div class="container text-center text-md-start mt-5">
+              <!-- Grid row -->
+              <div class="row mt-3">
+                
+        
+                
+        
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                    Some usefull links
+                  </h6>
+                  <p>
+                    <a href="about" class="text-reset">About us</a>
+                  </p>
+                  <p>
+                    <a href="svetovalnica" class="text-reset">Forum</a>
+                  </p>
+                  <p>
+                    <a href="login" class="text-reset">Login</a>
+                  </p>
+                  <p>
+                    <a href="register" class="text-reset">Register</a>
+                  </p>
+                </div>
+                <!-- Grid column -->
+        
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                    Contact
+                  </h6>
+                  <p><i class="fas fa-home me-3"></i>Koroška cesta 46, 2000 Maribor</p>
+                  <p>
+                    <i class="fas fa-envelope me-3"></i>
+                    feri@um.si
+                  </p>
+                  <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                  <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                </div>
+                <!-- Grid column -->
+              </div>
+              <!-- Grid row -->
+            </div>
+          </section>
+          <!-- Section: Links  -->
+        
+          <!-- Copyright -->
+          <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2022 Copyright
+            <a class="text-reset fw-bold" href="#">KOLESAR.SI</a>
+          </div>
+          <!-- Copyright -->
+        </footer>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../JavaScript/jsindex.js" type="text/javascript"></script>
+  <script src="../JavaScript/createtrail.js" type="text/javascript"></script>
+    <script src="#" type="text/javascript"></script> <!--Here is the link to connect the js in case it doesnt work the up link in the head.-->
+
+</body>
+</html>
